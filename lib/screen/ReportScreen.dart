@@ -11,61 +11,60 @@ class FlutterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ValueListenableBuilder<bool>(
-        valueListenable: _dark,
-        builder: (context, color, child) {
-          return ValueListenableBuilder<double>(
-            valueListenable: _widthFactor,
-            builder: (context, factor, child) {
-              return Scaffold(
-                backgroundColor: _dark.value ? Colors.black : Colors.white,
-                appBar: AppBar(
-                  actions: [
-                    Switch(
-                      value: _dark.value,
-                      onChanged: (value) {
-                        _dark.value = value;
-                      },
-                    ),
-                    DropdownButton<double>(
-                      value: _widthFactor.value,
-                      onChanged: (value) {
-                        _widthFactor.value = value!;
-                      },
-                      items: [
-                        DropdownMenuItem<double>(
-                          value: 0.5,
-                          child: Text('Size: 50%'),
+        home: ValueListenableBuilder<bool>(
+            valueListenable: _dark,
+            builder: (context, color, child) {
+              return ValueListenableBuilder<double>(
+                valueListenable: _widthFactor,
+                builder: (context, factor, child) {
+                  return Scaffold(
+                      backgroundColor:
+                          _dark.value ? Colors.black : Colors.white,
+                      // appBar: AppBar(
+                      //   actions: [
+                      //     Switch(
+                      //       value: _dark.value,
+                      //       onChanged: (value) {
+                      //         _dark.value = value;
+                      //       },
+                      //     ),
+                      //     DropdownButton<double>(
+                      //       value: _widthFactor.value,
+                      //       onChanged: (value) {
+                      //         _widthFactor.value = value!;
+                      //       },
+                      //       items: [
+                      //         DropdownMenuItem<double>(
+                      //           value: 0.5,
+                      //           child: Text('Size: 50%'),
+                      //         ),
+                      //         DropdownMenuItem<double>(
+                      //           value: 0.75,
+                      //           child: Text('Size: 75%'),
+                      //         ),
+                      //         DropdownMenuItem<double>(
+                      //           value: 1.0,
+                      //           child: Text('Size: 100%'),
+                      //         ),
+                      //       ],
+                      //     ),
+                      //   ],
+                      // ),
+                      body: Center(
+                          child: Container(
+                        width: MediaQuery.of(context).size.width *
+                            _widthFactor.value,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Home(),
+                          ],
                         ),
-                        DropdownMenuItem<double>(
-                          value: 0.75,
-                          child: Text('Size: 75%'),
-                        ),
-                        DropdownMenuItem<double>(
-                          value: 1.0,
-                          child: Text('Size: 100%'),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                body: Center(
-                  child: Container(
-                    width:
-                        MediaQuery.of(context).size.width * _widthFactor.value,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [Home()],
-                    ),
-                  ),
-                ),
+                      )));
+                },
               );
-            },
-          );
-        },
-      ),
-    );
+            }));
   }
 }
 
@@ -96,11 +95,7 @@ class Home extends StatelessWidget {
                     gradient: RadialGradient(
                       center: Alignment(0.61, 1.11),
                       radius: 0.71,
-                      colors: [
-                        Color(0xFFDBF5DF),
-                        Color(0xFCE5F6E8),
-                        Color(0x00E3FAE7),
-                      ],
+                      colors: [Color(0xFFDBF5DF), Color(0xFCE5F6E8), Color(0x00E3FAE7)],
                     ),
                     shape: OvalBorder(),
                   ),
@@ -126,13 +121,163 @@ class Home extends StatelessWidget {
                 left: 24,
                 top: 186,
                 child: Container(
-                  width: 337,
-                  height: 261,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://picsum.photos/337/261"),
-                      fit: BoxFit.cover,
-                    ),
+                  width: 323,
+                  height: 241.79,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        left: 9.85,
+                        top: 104.23,
+                        child: Container(
+                          width: 283.29,
+                          height: 110.51,
+                          child: Stack(children: [
+                          
+                          ]),
+                        ),
+                      ),
+                      Positioned(
+                        left: 0.71,
+                        top: 133.01,
+                        child: Container(
+                          width: 34.89,
+                          height: 57.05,
+                          child: Stack(children: [
+                          
+                          ]),
+                        ),
+                      ),
+                      Positioned(
+                        left: 31.08,
+                        top: 0,
+                        child: Container(
+                          width: 164.54,
+                          height: 190.98,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                left: 0,
+                                top: 0,
+                                child: Container(
+                                  width: 164.54,
+                                  height: 190.98,
+                                  child: Stack(children: [
+                                  
+                                  ]),
+                                ),
+                              ),
+                              Positioned(
+                                left: 82.57,
+                                top: 20.44,
+                                child: Container(
+                                  width: 68.32,
+                                  height: 118.65,
+                                  child: Stack(
+                                    children: [
+                                      Positioned(
+                                        left: 8.41,
+                                        top: 15.49,
+                                        child: Opacity(
+                                          opacity: 0.24,
+                                          child: Container(
+                                            width: 55.52,
+                                            height: 94.27,
+                                            child: Stack(children: [
+                                            
+                                            ]),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 17.37,
+                                top: 54.60,
+                                child: Container(
+                                  width: 62.30,
+                                  height: 69.92,
+                                  child: Stack(children: [
+                                  
+                                  ]),
+                                ),
+                              ),
+                              Positioned(
+                                left: 45.88,
+                                top: 73.64,
+                                child: Container(
+                                  width: 8.92,
+                                  height: 5.35,
+                                  child: Stack(children: [
+                                  
+                                  ]),
+                                ),
+                              ),
+                              Positioned(
+                                left: 30.75,
+                                top: 108.88,
+                                child: Container(
+                                  width: 40.48,
+                                  height: 52.69,
+                                  child: Stack(children: [
+                                  
+                                  ]),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 71.94,
+                        top: 137.33,
+                        child: Container(
+                          width: 131.50,
+                          height: 69.87,
+                          child: Stack(children: [
+                          
+                          ]),
+                        ),
+                      ),
+                      Positioned(
+                        left: 238.77,
+                        top: 4.51,
+                        child: Container(
+                          width: 31.22,
+                          height: 37.25,
+                          child: Stack(children: [
+                      
+                          ]),
+                        ),
+                      ),
+                      Positioned(
+                        left: 161.77,
+                        top: 46.24,
+                        child: Container(
+                          width: 158.48,
+                          height: 158.30,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                left: 80.56,
+                                top: 67.48,
+                                child: Opacity(
+                                  opacity: 0.20,
+                                  child: Container(
+                                    width: 27.70,
+                                    height: 13.13,
+                                    child: Stack(children: [
+                                    
+                                    ]),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -181,15 +326,10 @@ class Home extends StatelessWidget {
                       Expanded(
                         child: Container(
                           width: double.infinity,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 132,
-                            vertical: 10,
-                          ),
+                          padding: const EdgeInsets.symmetric(horizontal: 132, vertical: 10),
                           decoration: ShapeDecoration(
                             color: Color(0xFF537006),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5),
-                            ),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -225,7 +365,7 @@ class Home extends StatelessWidget {
                       SizedBox(
                         width: 329,
                         child: Text(
-                          'Detect Defects',
+                          'Get Reports',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Color(0xFF537006),
@@ -239,7 +379,7 @@ class Home extends StatelessWidget {
                       SizedBox(
                         width: 329,
                         child: Text(
-                          'Spot defects instantly—solid, insect damage, broken, and more.',
+                          'Generate reports & share insights in one tap!',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Color(0xFF333333),
@@ -297,13 +437,8 @@ class Home extends StatelessWidget {
                                     height: 11.33,
                                     decoration: ShapeDecoration(
                                       shape: RoundedRectangleBorder(
-                                        side: BorderSide(
-                                          width: 1,
-                                          color: Color(0xFF1E535F),
-                                        ),
-                                        borderRadius: BorderRadius.circular(
-                                          2.67,
-                                        ),
+                                        side: BorderSide(width: 1, color: Color(0xFF1E535F)),
+                                        borderRadius: BorderRadius.circular(2.67),
                                       ),
                                     ),
                                   ),
@@ -335,9 +470,7 @@ class Home extends StatelessWidget {
                           height: 11,
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: NetworkImage(
-                                "https://picsum.photos/15/11",
-                              ),
+                              image: AssetImage("assets/images/report.png"),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -351,9 +484,7 @@ class Home extends StatelessWidget {
                           height: 10.67,
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: NetworkImage(
-                                "https://picsum.photos/17/11",
-                              ),
+                              image: AssetImage("assets/images/report.png"),
                               fit: BoxFit.fill,
                             ),
                           ),

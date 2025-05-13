@@ -2,7 +2,7 @@ import 'package:coffee_been_detection_system/firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:coffee_been_detection_system/screen/Login.dart';
+import 'package:coffee_been_detection_system/screen/LoginScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
@@ -134,22 +134,22 @@ class _SignupPageState extends State<SignupPage> {
           builder: (context, factor, child) {
             return Scaffold(
               backgroundColor: widget.dark.value ? Colors.black : Colors.white,
-              appBar: AppBar(
-                actions: [
-                  Switch(
-                    value: widget.dark.value,
-                    onChanged: (value) => widget.dark.value = value,
-                  ),
-                  DropdownButton<double>(
-                    value: widget.widthFactor.value,
-                    onChanged: (value) => widget.widthFactor.value = value!,
-                    items: [0.5, 0.75, 1.0].map((value) => DropdownMenuItem(
-                      value: value,
-                      child: Text('Size: ${(value * 100).toInt()}%'),
-                    )).toList(),
-                  ),
-                ],
-              ),
+              // appBar: AppBar(
+              //   actions: [
+              //     Switch(
+              //       value: widget.dark.value,
+              //       onChanged: (value) => widget.dark.value = value,
+              //     ),
+              //     DropdownButton<double>(
+              //       value: widget.widthFactor.value,
+              //       onChanged: (value) => widget.widthFactor.value = value!,
+              //       items: [0.5, 0.75, 1.0].map((value) => DropdownMenuItem(
+              //         value: value,
+              //         child: Text('Size: ${(value * 100).toInt()}%'),
+              //       )).toList(),
+              //     ),
+              //   ],
+              // ),
               body: _isLoading 
                 ? Center(child: CircularProgressIndicator())
                 : LayoutBuilder(

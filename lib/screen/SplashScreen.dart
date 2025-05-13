@@ -19,36 +19,36 @@ class FlutterApp extends StatelessWidget {
             builder: (context, factor, child) {
               return Scaffold(
                 backgroundColor: _dark.value ? Colors.black : Colors.white,
-                appBar: AppBar(
-                  actions: [
-                    Switch(
-                      value: _dark.value,
-                      onChanged: (value) {
-                        _dark.value = value;
-                      },
-                    ),
-                    DropdownButton<double>(
-                      value: _widthFactor.value,
-                      onChanged: (value) {
-                        _widthFactor.value = value!;
-                      },
-                      items: [
-                        DropdownMenuItem<double>(
-                          value: 0.5,
-                          child: Text('Size: 50%'),
-                        ),
-                        DropdownMenuItem<double>(
-                          value: 0.75,
-                          child: Text('Size: 75%'),
-                        ),
-                        DropdownMenuItem<double>(
-                          value: 1.0,
-                          child: Text('Size: 100%'),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                // appBar: AppBar(
+                //   actions: [
+                //     Switch(
+                //       value: _dark.value,
+                //       onChanged: (value) {
+                //         _dark.value = value;
+                //       },
+                //     ),
+                //     DropdownButton<double>(
+                //       value: _widthFactor.value,
+                //       onChanged: (value) {
+                //         _widthFactor.value = value!;
+                //       },
+                //       items: [
+                //         DropdownMenuItem<double>(
+                //           value: 0.5,
+                //           child: Text('Size: 50%'),
+                //         ),
+                //         DropdownMenuItem<double>(
+                //           value: 0.75,
+                //           child: Text('Size: 75%'),
+                //         ),
+                //         DropdownMenuItem<double>(
+                //           value: 1.0,
+                //           child: Text('Size: 100%'),
+                //         ),
+                //       ],
+                //     ),
+                //   ],
+                // ),
                 body: Center(
                   child: Container(
                     width:
@@ -124,8 +124,8 @@ class Home extends StatelessWidget {
                         height: 121,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: NetworkImage(
-                              "https://picsum.photos/190/121",
+                            image: AssetImage(
+                              "assets/images/splash.png",
                             ),
                             fit: BoxFit.fill,
                           ),

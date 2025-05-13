@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'screen/Login.dart';
-import 'screen/Signup.dart';
-import 'screen/Lets_Getstart.dart';
+import 'screen/LoginScreen.dart';
+import 'screen/SignupScreen.dart';
+import 'screen/WelcomeScreen.dart';
+import 'screen/StartScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -10,10 +11,10 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(FlutterApp());
+  runApp(CBDS());
 }
 
-class FlutterApp extends StatelessWidget {
+class CBDS extends StatelessWidget {
   final ValueNotifier<bool> _dark = ValueNotifier<bool>(true);
   final ValueNotifier<double> _widthFactor = ValueNotifier<double>(1.0);
 
@@ -23,11 +24,13 @@ class FlutterApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => HomeScreen(),
+        '/': (context) => WelcomeScreen(),
         '/login': (context) => LoginScreen(),
         '/signup': (context) => SignupScreen(),
       },
     );
   }
 }
+
+
 
