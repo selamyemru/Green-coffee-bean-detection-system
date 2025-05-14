@@ -140,50 +140,58 @@ class Home extends StatelessWidget {
                     ),
                   ),
 
-                  // Button
+                  // Button and line indicator
                   Positioned(
                     left: 0,
                     right: 0,
                     bottom: 80,
-                    child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                        ), // Optional: adds some margin to the left and right
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFF537006),
-                            minimumSize: Size(
-                              double.infinity,
-                              48,
-                            ), // Set width to double.infinity to make the button full-width
-                            shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius
-                                      .all(Radius.circular(5)), // Set to zero to remove rounding (optional)
+                    child: Column(
+                      children: [
+                        // Next Button
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xFF537006),
+                              minimumSize: Size(double.infinity, 48),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(5)),
+                              ),
                             ),
-                          ),
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/defectscreen');
-                          },
-                          child: Text(
-                            'Next',
-                            style: GoogleFonts.roboto(
-                              color: Colors.white,
-                              fontSize: 16,
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/defectscreen');
+                            },
+                            child: Text(
+                              'Next',
+                              style: GoogleFonts.roboto(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                        SizedBox(height: 20),
+                        // Line indicator (same as DetectDefectScreen)
+                        Container(
+                          width: 134,
+                          height: 5,
+                          decoration: ShapeDecoration(
+                            color: Color(0xFF0B202B),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
 
-                  // Footer label
+                  // Footer label - Adjusted to match first page
                   Positioned(
-                    bottom: 30,
-                    top: 100,
                     left: 0,
+                    top: 110,
                     right: 0,
+                    bottom: 30,
                     child: Center(
                       child: Text(
                         'Pure Coffee',
@@ -192,13 +200,6 @@ class Home extends StatelessWidget {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 1.5,
-                          shadows: [
-                            Shadow(
-                              offset: Offset(1, 1),
-                              blurRadius: 2.0,
-                              color: Colors.black12,
-                            ),
-                          ],
                         ),
                       ),
                     ),
